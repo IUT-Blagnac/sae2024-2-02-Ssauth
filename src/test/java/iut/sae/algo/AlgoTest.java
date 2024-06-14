@@ -15,12 +15,26 @@ public class AlgoTest extends TestCase{
  */
    @Test
    public void testRLE(){
-      assertEquals("", Algo.RLE("") );
-      
-      assertEquals("1a1b1c", Algo.RLE("abc"));
-      assertEquals("1a2b3c", Algo.RLE("abbccc"));
-      assertEquals("3a1b2a", Algo.RLE("aaabaa"));
-      assertEquals("1a1A1a", Algo.RLE("aAa"));
+
+      long startTime = System.nanoTime();
+      for(int i=0;i<100;i++){
+
+         assertEquals("", Algo.RLE("") );
+
+         assertEquals("1a1b1c", Algo.RLE("abc"));
+         assertEquals("1a2b3c", Algo.RLE("abbccc"));
+         assertEquals("3a1b2a", Algo.RLE("aaabaa"));
+         assertEquals("1a1A1a", Algo.RLE("aAa"));
+      }
+
+      long endTime = System.nanoTime();
+      long duration = endTime - startTime;
+
+      System.out.println("Durée d'exécution en nanosecondes: " + duration);
+      System.out.println("Durée d'exécution en millisecondes: " + (duration / 1_000_000.0));
+
+
+
 
    }
 
