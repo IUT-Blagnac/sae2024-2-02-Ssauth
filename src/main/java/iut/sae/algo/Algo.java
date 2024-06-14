@@ -37,14 +37,20 @@ public class Algo{
     }
 
     public static String unRLE(String in) throws AlgoException{
-        // Provide your algo here
-        return "NotYetImplemented";
-
+        String decode="";
+        for(int i=0;i<in.length()-1;i+=2){
+            for(int j=0;j<Integer.parseInt(String.valueOf(in.charAt(i)));j++)
+                decode+=in.charAt(i+1);
+        }
+        return decode;
     }
 
     public static String unRLE(String in, int iteration) throws AlgoException{
-        // Provide your algo here
-        return "NotYetImplemented";
+        String decode=in;
+        for(int i=0;i<iteration;i++){
+            decode=unRLE(decode);
+        }
+        return decode;
 
     }
 }

@@ -71,7 +71,7 @@ public class AlgoTest extends TestCase{
          assertEquals("aAa", Algo.unRLE("1a1A1a"));
       }
       catch(Exception e){
-         fail("Exception inatendue");
+         fail(e.getMessage());
       }
    }
    
