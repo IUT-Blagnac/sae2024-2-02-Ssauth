@@ -27,7 +27,16 @@ public class RLERecursifConsole{
         try{
             System.out.println("Entrée : "+in);
             System.out.println("Itérations : "+iterations);
+
+            long startTime = System.nanoTime();
+
             System.out.println("Sortie : "+ Algo.RLE(in, iterations));
+
+            long endTime = System.nanoTime();
+            long duration = endTime - startTime;
+
+            System.out.println("Durée d'exécution en nanosecondes: " + duration);
+            System.out.println("Durée d'exécution en millisecondes: " + (duration / 1000000.0));
         }
         catch(AlgoException e){
             System.err.println("Erreur lors de la transformation");

@@ -8,16 +8,16 @@ public class Algo{
 
         int compteur=0;
         char last=in.charAt(0);
-        String resultat="";
+        StringBuilder resultat=new StringBuilder();
         for(int i=0;i<in.length();i++){
             if(in.charAt(i)==last){
                 compteur++;
                 if(compteur==9){
-                    resultat+=compteur+""+in.charAt(i);
+                    resultat.append(compteur).append(last);
                     compteur=1;
                 }
             }else {
-                resultat+=compteur+""+last;
+                resultat.append(compteur).append(last);
                 compteur=1;
                 last=in.charAt(i);
             }
