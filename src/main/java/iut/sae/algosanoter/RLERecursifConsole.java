@@ -1,6 +1,5 @@
 package iut.sae.algosanoter;
 
-import iut.sae.algo.Algo;
 import iut.sae.algo.AlgoException;
 
 import java.util.Scanner;
