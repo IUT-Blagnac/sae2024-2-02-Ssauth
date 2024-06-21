@@ -9,10 +9,10 @@ char *fctRLE(char chaine[]) {
   // Sur VSCode, les "CLOCK_MONOTONIC" peuvent montrer des erreurs, 
   // mais lancer le programme fonctionne quand même et montre des temps qui semblent réalistes (plus rapide que Java).
 
-  // struct timespec start_time, end_time;
-  // long time_taken;
+   struct timespec start_time, end_time;
+   long time_taken;
 
-  // clock_gettime(CLOCK_MONOTONIC, &start_time);
+  clock_gettime(CLOCK_MONOTONIC, &start_time);
 
 
   int len = strlen(chaine);
@@ -47,10 +47,10 @@ char *fctRLE(char chaine[]) {
   }
 
   
-  // clock_gettime(CLOCK_MONOTONIC, &end_time);
+   clock_gettime(CLOCK_MONOTONIC, &end_time);
 
-  // time_taken = (end_time.tv_sec - start_time.tv_sec) * 1e9 + (end_time.tv_nsec - start_time.tv_nsec);
-  // printf("Temps pris : %ld nanosecondes\n", time_taken);
+   time_taken = (end_time.tv_sec - start_time.tv_sec) * 1e9 + (end_time.tv_nsec - start_time.tv_nsec);
+   printf("Temps pris : %ld nanosecondes\n", time_taken);
 
   return result;
 }
