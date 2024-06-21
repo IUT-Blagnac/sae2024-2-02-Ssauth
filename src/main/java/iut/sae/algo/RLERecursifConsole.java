@@ -30,7 +30,7 @@ public class RLERecursifConsole{
 
             long startTime = System.nanoTime();
 
-            System.out.println("Sortie : "+ Algo.RLE(in, iterations));
+            System.out.println("Sortie : "+ Efficacite.RLE(in, iterations));
 
             long endTime = System.nanoTime();
             long duration = endTime - startTime;

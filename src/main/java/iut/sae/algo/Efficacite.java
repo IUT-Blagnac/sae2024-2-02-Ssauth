@@ -1,7 +1,6 @@
 package iut.sae.algo;
 
-public class Algo {
-
+public class Efficacite {
     /**
      * Effectue une compression RLE (Run-Length Encoding) sur la chaîne d'entrée.
      *
