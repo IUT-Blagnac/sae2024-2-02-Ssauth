@@ -12,7 +12,7 @@ public class RLERecursifConsole{
             long startTime = System.nanoTime();
 
             for(int i=0;i<10;i++)
-                efficacite62.RLE("abc", 65);
+                sobriete62.RLE("abc", 65);
 
             long endTime = System.nanoTime();
             long duration = endTime - startTime;

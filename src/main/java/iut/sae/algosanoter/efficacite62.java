@@ -60,7 +60,7 @@ public class efficacite62{
         if(in.isEmpty())
             return "";
 
-        // Sinon l'on crée un nouveau StringBuilder 
+        // Sinon l'on crée un nouveau StringBuilder
         StringBuilder sb=new StringBuilder(in);
 
         for(int i=0;i<iteration;i++){
@@ -74,15 +74,15 @@ public class efficacite62{
     }
 
     /** Fonction appliquant l'algorithme de compression RLE.
-     * 
+     *
      * Fonction appliquant l'algorithme de compression RLE avec des StringBuilder.
-     * 
-     * @param in IN: StringBuilder de la chaine de charactères à compresser 
+     *
+     * @param in IN: StringBuilder de la chaine de charactères à compresser
      * @return un StringBuilder de la chaine compressée
      */
     private static StringBuilder RLE(StringBuilder in) {
 
-        // La fonction est identique à celle publique simplement sans conversion en String 
+        // La fonction est identique à celle publique simplement sans conversion en String
         // Elle évite la perte de temps de la conversion StringBuilder -> String.
 
         int len=in.length(), cpt=0;
@@ -108,7 +108,7 @@ public class efficacite62{
 
         str.append(cpt);
         str.append(lastChar);
-        
+
 		return str;
     }
 
@@ -132,7 +132,7 @@ public class efficacite62{
             // On récupère le charactère à ajouter
             toAdd=in.charAt(i+1);
 
-            // On ajoute times fois le charactère 
+            // On ajoute times fois le charactère
             for(int j=0;j<times;j++)
                 str.append(toAdd);
         }
@@ -149,30 +149,30 @@ public class efficacite62{
         if(in.isEmpty() || iteration<=0)
             return in;
 
-        
+
         // On initialise un StringBuilder correspondant au String in
         StringBuilder sb=new StringBuilder(in);
-        
+
         for(int i=0;i<iteration;i++){
             // On appelle une méthode similaire a unRLE mais utilisant et retournant des StringBuilder
             sb=unRLE(sb);
         }
-        
-        // Retourne le String correspondant au StringBuilder 
+
+        // Retourne le String correspondant au StringBuilder
         return new String(sb);
     }
 
 
     /**  Fonction appliquant l'algorithme de cécompression RLE.
-     * 
+     *
      * Fonction appliquant l'algorithme de décompression RLE avec des StringBuilder.
-     * 
-     * @param str IN: StringBuilder de la chaine de charactères à décompresser 
+     *
+     * @param str IN: StringBuilder de la chaine de charactères à décompresser
      * @return un StringBuilder de la chaine décompressée
      */
     private static StringBuilder unRLE(StringBuilder str){
 
-        // La fonction est identique à celle publique simplement sans conversion en String 
+        // La fonction est identique à celle publique simplement sans conversion en String
         // Elle évite la perte de temps de la conversion StringBuilder -> String.
 
         int len=str.length(),times;

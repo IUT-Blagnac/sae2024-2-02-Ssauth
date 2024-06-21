@@ -18,8 +18,19 @@ def sobriete(text: str) -> str:
     
     return ''.join(result)
 
-# Exemple d'utilisation
-if __name__ == "__main__":
-    test_string = "WWWWWWWWWBWWWWWWWWBBBWWWBWWWWWWW"
-    compressed = sobriete(test_string)
-    print(compressed)  # devrait imprimer "9W1B8W3B3W1B7W"
+
+import unittest
+
+# Inserer les méthodes et remplace "XXX" par le nom de la class et 
+
+class TestJUnit(unittest.TestCase):
+    def test_RLE(self):
+        self.assertEqual(sobriete(""), "")  # Test avec une chaîne vide
+        self.assertEqual(sobriete("A"), "1A")  # Test avec une seule lettre
+        self.assertEqual(sobriete("AAA"), "3A")  # Test avec une répétition simple
+        self.assertEqual(sobriete("AAAAAAAAAA"), "9A1A")  # Test avec une répétition de plus de 9 caractères
+        self.assertEqual(sobriete("AAABBB"), "3A3B")  # Test avec des caractères différents
+        self.assertEqual(sobriete("AAABBBCCCCCCCCC"), "3A3B9C")  # Test avec une combinaison de cas
+
+if __name__ == '__main__':
+    unittest.main()

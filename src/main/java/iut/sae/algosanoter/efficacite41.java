@@ -35,8 +35,8 @@ public class efficacite41{
     public static String RLE(String in, int iteration) throws AlgoException{
         if (iteration < 1)
             throw new AlgoException("Erreur: L'itération ne doit pas être inférieur à 1");
-        
-        String out = in; 
+
+        String out = in;
         for (int i = 0 ; i < iteration ; i++ ){
             out = RLE(out);
         }
@@ -44,12 +44,12 @@ public class efficacite41{
     }
 
     public static String unRLE(String in) throws AlgoException{
-        if (in.isEmpty() || in == null) 
+        if (in.isEmpty() || in == null)
             return "";
-            
+
         int length, i, j, ctChar;
-        char chars[]; 
-        
+        char chars[];
+
         StringBuilder out = new StringBuilder();
 
         chars = in.toCharArray();
@@ -61,7 +61,7 @@ public class efficacite41{
             ctChar = Character.getNumericValue(chars[i]);
                 for ( j = 0 ; j < ctChar ; j++ ){
                     out.append(chars[i+1]);
-                }              
+                }
         }
         return out.toString();
     }
@@ -69,9 +69,9 @@ public class efficacite41{
     public static String unRLE(String in, int iteration) throws AlgoException{
         if (iteration < 1)
             throw new AlgoException("Erreur: L'itération ne doit pas être inférieur à 1");
-        
+
         String out = in;
-        
+
         for (int i = 0 ; i < iteration ; i++ ){
             out = unRLE(out);
         }
